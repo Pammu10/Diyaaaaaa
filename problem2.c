@@ -1,3 +1,4 @@
+//Pramodh Krishna
 #include<stdio.h>
 #define wsize 10
 
