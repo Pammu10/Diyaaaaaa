@@ -1,5 +1,4 @@
 //Pramodh Krishna
-//Sorry I did it without data structures but atleast It's my thinking so I don't give a shit
 #include<stdio.h>
 int op = 0;
 int answer[10];
