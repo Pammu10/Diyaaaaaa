@@ -1,35 +1,52 @@
-//Pramodh Krishna
+//Pramodh Krishna 
+//Problem 2 
+
 #include<stdio.h>
-#define wsize 10
+#include<string.h>
 
 struct stack{
-    int top; 
-    char a[wsize];
+    char arr[100];
+    int top;
 }s;
 
-void push(char);
-char pop();
+void push(char c){
+    s.arr[++s.top] = c;
+}
+
+void pop(){
+    printf("%c", s.arr[s.top--]);
+}
+
+int isempty(){
+    if (s.top == -1){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
 
 int main()
 {
-    int n, i, j, e, k;
-    char w[wsize];
-    char nw[wsize];
     s.top = -1;
-    scanf("%s", w);
-    for (i = 0; w[i] != '\0'; i++){
-        push(w[i]);
+    char str[100];
+    scanf("%100[^\n]s", str);
+    char c = ' ';
+    strncat(str, &c, 1);
+    int n = sizeof(str)/sizeof(str[0]);
+    for (int i = strlen(str) - 1; i >= 0; i--){
+        push(str[i]);
+        
+        if (str[i-1] ==  ' '){
+            while(isempty() == 0){
+                pop();
+            }
+        }
     }
-    for (i = 0; i < n; i++)
-        printf("%c", pop());
+    while (isempty() == 0)
+        pop();
+    
+
     return 0;
 }
 
-
-void push(char c){
-    s.a[++s.top]= c;
-}
-
-char pop(){
-    return s.a[s.top--];
-}
