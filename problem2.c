@@ -18,12 +18,10 @@ void pop(){
 }
 
 int isempty(){
-    if (s.top == -1){
+    if (s.top == -1)
         return 1;
-    }
-    else {
+    else 
         return 0;
-    }
 }
 
 int main()
@@ -46,6 +44,5 @@ int main()
     while (isempty() == 0)
         pop();
     
-
     return 0;
 }
