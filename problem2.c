@@ -1,93 +1,51 @@
-/*
-Pramodh Krishna
-#include<stdio.h>
-#define wsize 10
+//Pramodh Krishna 
+//Problem 2 
 
-struct stack{
-    int top; 
-    char a[wsize];
-}s;
-
-void push(char);
-char pop();
-
-int main()
-{
-    int n, i, j, e, k;
-    char w[wsize];
-    char nw[wsize];
-    s.top = -1;
-    scanf("%s", w);
-    for (i = 0; w[i] != '\0'; i++){
-        push(w[i]);
-    }
-    for (i = 0; i < n; i++)
-        printf("%c", pop());
-    return 0;
-}
-
-
-void push(char c){
-    s.a[++s.top]= c;
-}
-
-char pop(){
-    return s.a[s.top--];
-}
-*/
-
-//Pramodh Krishna
 #include<stdio.h>
 #include<string.h>
-#define wsize 8
 
 struct stack{
-    int top; 
-    char* a[wsize];
-}s, ns;
+    char arr[100];
+    int top;
+}s;
 
-void push_s(char*);
-char* pop();
-void display();
+void push(char c){
+    s.arr[++s.top] = c;
+}
+
+void pop(){
+    printf("%c", s.arr[s.top--]);
+}
+
+int isempty(){
+    if (s.top == -1){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
 
 int main()
 {
-    int n, i, k;
-    char w[wsize];
-    char nw[wsize];
-    char *ptr;
-    char *srt;
-    gets(w);
     s.top = -1;
-    k = 0;
-    ptr = w;
-    srt = nw;
-    for (ptr = w; *ptr != '\0'; ptr++){
-        srt = ptr;
-        printf("%c   ", *srt);
-        push_s(srt);
-    }
-    //display();
-    for (i = 0; i < strlen(w); i++){
-        printf("%d", s.top);
-        printf("%s\n", pop());
-    }
+    char str[100];
+    scanf("%100[^\n]s", str);
+    char c = ' ';
+    strncat(str, &c, 1);
+    int n = sizeof(str)/sizeof(str[0]);
+    for (int i = strlen(str) - 1; i >= 0; i--){
+        push(str[i]);
         
-    //for (i = 0; i < n; i++)
-    //    printf("%s", pop());
-    //return 0;
-}
-
-void display(){
-    int temp = s.top;
-    while (temp > -1){
-        printf("%s\n", s.a[temp--]);
+        if (str[i-1] ==  ' '){
+            while(isempty() == 0){
+                pop();
+            }
+        }
     }
+    while (isempty() == 0)
+        pop();
+    
 
-}
-void push_s(char *c){
-    s.a[++s.top]= c;
-}
-char* pop(){
-    return s.a[s.top--];
+    return 0;
 }
