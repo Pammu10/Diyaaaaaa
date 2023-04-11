@@ -5,8 +5,7 @@ let loginForm = document.querySelector('.login-form-container');
 let formClose = document.querySelector('#form-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
-let videoBtn = document.querySelectorAll('.vid-btn')
-
+let videoBtn = document.querySelectorAll('.vid-btn');
 
 window.onscroll = () => {
     searchBtn.classList.remove('fa-times');
@@ -44,3 +43,32 @@ videoBtn.forEach(btn => {
         document.querySelector('#video-slider').src = src;
     })
 });
+
+
+function validateform(){  
+    var x=document.myform.email.value;  
+    var password=document.myform.password.value;  
+      
+    var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+alert("Please enter a valid e-mail address");  
+return false;  
+}  
+    else if(password.length<6){  
+      alert("Password must be at least 6 characters long");  
+      return false;  
+      }
+      else {
+        document.myform.email.value = ""
+        document.myform.password.value = ""
+        alert("Successfully logged in");
+        console.log("true")
+        return true
+      }
+        
+      }
+
+
+
+

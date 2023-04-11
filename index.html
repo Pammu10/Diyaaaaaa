@@ -7,8 +7,40 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/cb77c6ce0d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+
+
+    <script>  
+        function validateform(){  
+        var x=document.myform.email.value;  
+        var password=document.myform.password.value;  
+          
+        var atposition=x.indexOf("@");  
+    var dotposition=x.lastIndexOf(".");  
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+    alert("Please enter a valid e-mail address");  
+    return false;  
+  }  
+        else if(password.length<6){  
+          alert("Password must be at least 6 characters long!!");  
+          console.log("false2")
+          return false;  
+          }
+          
+          else {
+            document.myform.email.value = ""
+            document.myform.password.value = ""
+            alert("Successfully logged in");
+            console.log("true")
+            return true
+          }
+        }  
+        </script>  
+
+
 </head>
 <body>
+
+   
     <header>
 
         <div id="menu-bar" class="fa-solid fa-bars"></div>
@@ -18,15 +50,15 @@
             <a href="#home">Home</a>
             <a href="#friends">With Friends</a>
             <a href="#dates">With Date</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
         </nav>
         <div class="icons">
             <i class="fa-brands fa-searchengin" id="search-btn"></i>
             <i class="fa-regular fa-user" id="login-btn"></i>
         </div>
-        <form action="" class="search-bar-container">
-            <input type="search" id="search-bar" placeholder="Search here...">
+        <form class="search-bar-container" action="/confirm" method="post">
+            <input type="search" id="search-bar" name="search" placeholder="Search here..." ondblclick="SubmitEvent">
             <label for="searchbar" class="fa-brands fa-searchengin"></label>
         </form>
     </header>
@@ -34,13 +66,12 @@
 
     <div class="login-form-container">
         <i class="fa-solid fa-power-off" id="form-close"></i>
-        <form action="">
+        <form name="myform" method="" action="" onsubmit="return validateform();" autocomplete="off" > 
             <h3>login</h3>
-            <input type="email" class="box" placeholder="Enter your email">
-            <input type="password" class="box" placeholder="Enter your password">
+            <input type="text" name="email" class="box" placeholder="Enter your email">
+            <input type="password" name="password" class="box" placeholder="Enter your password">
             <input type="submit" class="btn" value="login now">
-            <p>fogot password? <a href="#">Click here</a></p>
-            <p>don't have an account? <a href="#">Register now</a></p>
+            <p>forgot password? <a href="#">Click here</a></p>
         </form>
     </div>
 
@@ -55,7 +86,7 @@
         </div>
 
         <div class="controls">
-            <span class="vid-btn active" data-src="images/1.mp4"></span>
+            <span class="vid-btn active" data-src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1680627723/kq6fl8rjasrqt3ghoqez.mp4"></span>
             <span class="vid-btn" data-src="images/2.mp4"></span>
             <span class="vid-btn" data-src="images/3.mp4"></span>
             <span class="vid-btn" data-src="images/4.mp4"></span>
@@ -63,7 +94,7 @@
         </div>
 
         <div class="video-container">
-            <video src="images/1.mp4" id="video-slider" loop autoplay muted></video>
+            <video src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1680627723/kq6fl8rjasrqt3ghoqez.mp4" id="video-slider" loop autoplay muted></video>
         </div>
 
 
@@ -87,12 +118,10 @@
 
     <div class="box-container">
         <div class="box">
-            <img src="images/2.jpg" alt="">
+            <img src="https://www.equitypandit.com/wp-content/uploads/2018/06/pvr-cinemas-1.jpg" alt="">
             <div class="content">
                 <h3><i class="fa-solid fa-map-pin"></i> PVR </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                    Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                     maiores distinctio earum quo beatae pariatur rerum!</p>
+                <p>India's largest premium film exhibition company. Enjoy Indian and International cinema with delicious gourmet food.</p>
                      <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -105,12 +134,10 @@
             </div>
         </div>
             <div class="box">
-                <img src="images/2.jpg" alt="">
+                <img src="https://www.delhimetrotimes.in/photos/2021/03/vellore.jpg" alt="">
                 <div class="content">
-                    <h3><i class="fa-solid fa-map-pin"></i> Place X </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                        Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                        maiores distinctio earum quo beatae pariatur rerum!</p>
+                    <h3><i class="fa-solid fa-map-pin"></i> Vellore fort </h3>
+                    <p>Vellore Fort is a large 16th-century fort situated in heart of the Vellore city, in the state of Tamil Nadu, India built by Vijayanagara kings.</p>
                         <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -123,12 +150,10 @@
                 </div>
             </div>
             <div class="box">
-                <img src="images/2.jpg" alt="">
+                <img src="https://b.zmtcdn.com/data/pictures/7/69917/b603c779d1ea5395dcfa337cfa4d5f6f.jpg" alt="">
                 <div class="content">
                     <h3><i class="fa-solid fa-map-pin"></i> Zaitoon </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                        Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                         maiores distinctio earum quo beatae pariatur rerum!</p>
+                    <p>The art of perfect dining and the heart of pure food experience. An engaging and wholesome connection of happiness of eating well.</p>
                          <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -141,12 +166,10 @@
                 </div>
             </div>
             <div class="box">
-                <img src="images/2.jpg" alt="">
+                <img src="   " alt="">
                 <div class="content">
-                    <h3><i class="fa-solid fa-map-pin"></i> Zaitoon </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                        Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                         maiores distinctio earum quo beatae pariatur rerum!</p>
+                    <h3><i class="fa-solid fa-map-pin"></i> Chai galli </h3>
+                    <p>An amazing cafe with a wide variety of cusines,this place has the youngster vibe and asthetics along with top notch service and taste.</p>
                          <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -177,12 +200,10 @@
 
     <div class="box-container">
         <div class="box">
-            <img src="images/2.jpg" alt="">
+            <img src="https://www.equitypandit.com/wp-content/uploads/2018/06/pvr-cinemas-1.jpg" alt="">
             <div class="content">
                 <h3><i class="fa-solid fa-map-pin"></i> PVR </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                    Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                     maiores distinctio earum quo beatae pariatur rerum!</p>
+                <p>India's largest premium film exhibition company. Enjoy Indian and International cinema with delicious gourmet food, comfortable recliner seats and the classic PVR experience.</p>
                      <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -195,12 +216,12 @@
             </div>
         </div>
             <div class="box">
-                <img src="images/2.jpg" alt="">
+                <img src="https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,h_600,q_auto,w_auto/v1/filestore/z2dj8ig6f6a8u8yg9sj0kn4dlwfj_Cup%20And%20Saucer%20Waterfalls.jpg" alt="">
                 <div class="content">
-                    <h3><i class="fa-solid fa-map-pin"></i> Place X </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                        Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                        maiores distinctio earum quo beatae pariatur rerum!</p>
+                    <h3><i class="fa-solid fa-map-pin"></i>cup and saucer waterfalls</h3>
+                    <p> The name of this waterfall is attributed to its unique shape that appears as if a cup of water is pouring its contents into a massive saucer.
+
+                        The gorgeous site can be best enjoyed from atop the hill.</p>
                         <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -213,12 +234,10 @@
                 </div>
             </div>
             <div class="box">
-                <img src="images/2.jpg" alt="">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/3c/e2/2c/golden-temple-3.jpg?w=1200&h=-1&s=1" alt="">
                 <div class="content">
-                    <h3><i class="fa-solid fa-map-pin"></i> Zaitoon </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                        Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                         maiores distinctio earum quo beatae pariatur rerum!</p>
+                    <h3><i class="fa-solid fa-map-pin"></i> Golden temple </h3>
+                    <p>The Sripuram Golden Temple is a sight to behold, and it is situated in Tirumalaikodi at Southern Vellore, Tamil Nadu. The golden temple sits inside a spiritual park or ‘Spiritual Oasis’.</p>
                          <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -231,12 +250,10 @@
                 </div>
             </div>
             <div class="box">
-                <img src="images/2.jpg" alt="">
+                <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/park-4263184_1280.jpg" alt="">
                 <div class="content">
-                    <h3><i class="fa-solid fa-map-pin"></i> Zaitoon </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ipsam? 
-                        Voluptas ipsam nihil similique enim odit? Esse, cumque. Officiis, aspernatur accusamus veritatis quisquam
-                         maiores distinctio earum quo beatae pariatur rerum!</p>
+                    <h3><i class="fa-solid fa-map-pin"></i> Periyar park </h3>
+                    <p>Periyar Park centrally located in the city of Vellore is a spot frequently visited by both locals and tourists. It is a park with state-of-the-art facilities for joggers, family picnics and other pastimes. This place is best known for its vibrant green matting all over and the different species of birds here.</p>
                          <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -251,11 +268,6 @@
 
     </div>
     </section>
-
-    <section class="footer">
-        <h1 class="credit">Created by <span> Pramodh krishna, Diya Madhu </span></h1>
-    </section>
-
     <script src="script.js"></script>
 </body>
 </html>
