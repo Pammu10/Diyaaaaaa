@@ -81,15 +81,16 @@ app.get('/script.js', (req, res) => {
 app.get('/', (req, res)=>{
     res.sendFile(__dirname + "/index.html")})
 
+
 app.post('/confirm', function(req, res) {
     var search = req.body.search;
     var html = ``
     Data.find({name: search}).then(function(data){
         console.log(data)
         html += `<div style="background-image: url(https://image.freepik.com/free-vector/doodle-travel-background_23-2148044879.jpg); background-repeat: repeat;">`;
-            data.forEach((data) => {html +=`<div style="display: block; max-width: 600px; margin: auto; background-color: rgba(0, 0, 0, 0.5); padding: 20px; padding-left: 100px;padding-right: 100px">
+            data.forEach((data) => {html +=`<div style="display: block; max-width: 900px; margin: auto; background-color: rgba(0, 0, 0, 0.5);  padding: 20px 100px;">
             <h1 style="color: #53fa15; text-align: center;background-color: rgba(0, 0, 0, 0.7)">${data.name}</h1>
-            <img src="${data.img}" width="600px"></img>
+            <img src="${data.img}" width="900px" style="display: block; margin-left: auto; margin-right: auto; max-width: 900px;"></img>
             <h3 style="color: #53fa15;text-align: center;background-color: rgba(0, 0, 0, 0.7)">${data.content}</h3>
             <h3 style="color: #53fa15;text-align: center;background-color: rgba(0, 0, 0, 0.7)">${data.price}</h3>
             </div>`
@@ -100,9 +101,9 @@ app.post('/confirm', function(req, res) {
     Data.find().then(function(data){
         html += `<div style="background-image: url(https://image.freepik.com/free-vector/doodle-travel-background_23-2148044879.jpg); background-repeat: repeat;">`;
         
-        data.forEach((data) => {html +=`<div style="display: block; max-width: 600px; margin: auto; background-color: rgba(0, 0, 0, 0.5); padding: 20px; padding-left: 100px;padding-right: 100px">
+        data.forEach((data) => {html +=`<div style="display: block; max-width: 900px; margin: auto; background-color: rgba(0, 0, 0, 0.5); padding: 20px 100px;">
             <h1 style="color: #53fa15; text-align: center; background-color: rgba(0, 0, 0, 0.7)">${data.name}</h1>
-            <img src="${data.img}" width="600px"></img>
+            <img src="${data.img}" width="900px" style="display: block; margin-left: auto; margin-right: auto;"></img>
             <h3 style="color: #53fa15;text-align: center;background-color: rgba(0, 0, 0, 0.7)">${data.content}</h3>
             <h3 style="color: #53fa15;text-align: center;background-color: rgba(0, 0, 0, 0.7)">${data.price}</h3>
             </div>`
