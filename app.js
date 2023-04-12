@@ -116,14 +116,6 @@ app.post('/confirm', function(req, res) {
     
 })
 
-app.get('/contact', function(req, res){
-    res.sendFile(__dirname + '/contact.html')
-})
-
-
-app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/about.html')
-})
 
 app.post('/contacted', function(req, res) {
     
@@ -140,6 +132,21 @@ app.post('/contacted', function(req, res) {
     </div>`
     res.send(html);
 })
+
+
+app.get('/contact', function(req, res){
+    res.sendFile(__dirname + '/contact.html')
+})
+
+
+app.get('/about', function(req, res){
+    res.sendFile(__dirname + '/about.html')
+})
+
+app.get('/discover', function(req, res){
+    res.sendFile(__dirname + '/discover.html')
+})
+
 
 app.listen(8000, (err)=>{
     if (err){

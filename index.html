@@ -7,36 +7,7 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/cb77c6ce0d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-
-
-    <script>  
-        function validateform(){  
-        var x=document.myform.email.value;  
-        var password=document.myform.password.value;  
-          
-        var atposition=x.indexOf("@");  
-    var dotposition=x.lastIndexOf(".");  
-    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
-    alert("Please enter a valid e-mail address");  
-    return false;  
-  }  
-        else if(password.length<6){  
-          alert("Password must be at least 6 characters long!!");  
-          console.log("false2")
-          return false;  
-          }
-          
-          else {
-            document.myform.email.value = ""
-            document.myform.password.value = ""
-            alert("Successfully logged in");
-            console.log("true")
-            return true
-          }
-        }  
-        </script>  
-
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -50,8 +21,8 @@
             <a href="#home">Home</a>
             <a href="#friends">With Friends</a>
             <a href="#dates">With Date</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
         </nav>
         <div class="icons">
             <i class="fa-brands fa-searchengin" id="search-btn"></i>
@@ -66,11 +37,11 @@
 
     <div class="login-form-container">
         <i class="fa-solid fa-power-off" id="form-close"></i>
-        <form name="myform" method="" action="" onsubmit="return validateform();" autocomplete="off" > 
+        <form name="myform" method="" action="" onsubmit="return validateform()" autocomplete="off" > 
             <h3>login</h3>
-            <input type="text" name="email" class="box" placeholder="Enter your email">
-            <input type="password" name="password" class="box" placeholder="Enter your password">
-            <input type="submit" class="btn" value="login now">
+            <input type="text" name="email" class="box" id="email" placeholder="Enter your email">
+            <input type="password" name="password" id="password" class="box" placeholder="Enter your password">
+            <button type="submit" id="login" class="btn">Login now</button>
             <p>forgot password? <a href="#">Click here</a></p>
         </form>
     </div>
@@ -82,7 +53,7 @@
         <div class="content">
             <h3>Adventure is worthwile</h3>
             <p>discover new places with us, adventure awaits</p>
-            <a href="#" class="btn">discover more</a>
+            <a href="/discover" class="btn">discover more</a>
         </div>
 
         <div class="controls">
@@ -129,7 +100,7 @@
                         <i class="fa-regular fa-star"></i>
                      </div>
                      <div class="price">500 - 2000 per person</div>
-                     <a href="#" class="btn">more details</a>
+                     <a href="#home" class="btn">more details</a>
             </div>
         </div>
             <div class="box">
@@ -145,7 +116,7 @@
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="price">100 per person</div>
-                        <a href="#" class="btn">more details</a>
+                        <a href="#home" class="btn">more details</a>
                 </div>
             </div>
             <div class="box">
@@ -161,7 +132,7 @@
                             <i class="fa-solid fa-star"></i>
                          </div>
                          <div class="price">1000 per person</div>
-                         <a href="#" class="btn">More Details</a>
+                         <a href="#home" class="btn">More Details</a>
                 </div>
             </div>
             <div class="box">
@@ -177,7 +148,7 @@
                             <i class="fa-solid fa-star"></i>
                          </div>
                          <div class="price">1000 per person</div>
-                         <a href="#" class="btn">More Details</a>
+                         <a href="#home" class="btn">More Details</a>
                 </div>
             </div>
 
@@ -211,7 +182,7 @@
                         <i class="fa-regular fa-star"></i>
                      </div>
                      <div class="price">500 - 2000 per person</div>
-                     <a href="#" class="btn">more details</a>
+                     <a href="#home" class="btn">more details</a>
             </div>
         </div>
             <div class="box">
@@ -229,7 +200,7 @@
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="price">100 per person</div>
-                        <a href="#" class="btn">more details</a>
+                        <a href="#home" class="btn">more details</a>
                 </div>
             </div>
             <div class="box">
@@ -245,7 +216,7 @@
                             <i class="fa-solid fa-star"></i>
                          </div>
                          <div class="price">1000 per person</div>
-                         <a href="#" class="btn">More Details</a>
+                         <a href="#home" class="btn">More Details</a>
                 </div>
             </div>
             <div class="box">
@@ -261,12 +232,13 @@
                             <i class="fa-solid fa-star"></i>
                          </div>
                          <div class="price">1000 per person</div>
-                         <a href="#" class="btn">More Details</a>
+                         <a href="#home" class="btn">More Details</a>
                 </div>
             </div>
 
     </div>
     </section>
+    
     <script src="script.js"></script>
 </body>
 </html>
