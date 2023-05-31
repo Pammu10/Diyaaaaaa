@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <script src="https://kit.fontawesome.com/cb77c6ce0d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+   
+    <header>
+
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+
+        <a href="#" class="logo">Exploree</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#friends">With Friends</a>
+            <a href="#dates">With Date</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <i class="fa-brands fa-searchengin" id="search-btn"></i>
+            <i class="fa-regular fa-user" id="login-btn"></i>
+        </div>
+        <form class="search-bar-container" action="/confirm" method="post">
+            <input type="search" id="search-bar" name="search" placeholder="Search here..." ondblclick="SubmitEvent">
+            <label for="searchbar" class="fa-brands fa-searchengin"></label>
+        </form>
+    </header>
+
+
+    <div class="login-form-container">
+        <i class="fa-solid fa-power-off" id="form-close"></i>
+        <form name="myform" method="" action="" onsubmit="return validateform()" autocomplete="off" > 
+            <h3>login</h3>
+            <input type="text" name="email" class="box" id="email" placeholder="Enter your email">
+            <input type="password" name="password" id="password" class="box" placeholder="Enter your password">
+            <button type="submit" id="login" class="btn">Login now</button>
+            <p>forgot password? <a href="#">Click here</a></p>
+        </form>
+    </div>
+
+
+
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Adventure is worthwile</h3>
+            <p>discover new places with us, adventure awaits</p>
+            <a href="/discover" class="btn">discover more</a>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" data-src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1680627723/kq6fl8rjasrqt3ghoqez.mp4"></span>
+            <span class="vid-btn" data-src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1681238467/pexels-taryn-elliott-3018542-1920x1080-24fps_lrecdu.mp4"></span>
+            <span class="vid-btn" data-src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1681238417/pexels-ketut-subiyanto-4879987-3840x2160-25fps_gkuvhn.mp4"></span>
+            <span class="vid-btn" data-src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1681238354/pexels-athena-3002384-1920x1080-25fps_d5kz0c.mp4"></span>
+        </div>
+
+        <div class="video-container">
+            <video src="https://res.cloudinary.com/dfoxq9o3d/video/upload/v1680627723/kq6fl8rjasrqt3ghoqez.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+
+
+    </section>
+
+    <section class="friends" id="friends">
+        <h1 class="heading">
+            <span>W</span>
+            <span>I</span>
+            <span>T</span>
+            <span>H</span>
+            <span class="space"></span>
+            <span>F</span>
+            <span>R</span>
+            <span>I</span>
+            <span>E</span>
+            <span>N</span>
+            <span>D</span>
+            <span>S</span>
+        </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="https://www.equitypandit.com/wp-content/uploads/2018/06/pvr-cinemas-1.jpg" alt="">
+            <div class="content">
+                <h3><i class="fa-solid fa-map-pin"></i> PVR </h3>
+                <p>India's largest premium film exhibition company. Enjoy Indian and International cinema with delicious gourmet food.</p>
+                     <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </div>
+                     <div class="price">500 - 2000 per person</div>
+                     <a href="#home" class="btn">more details</a>
+            </div>
+        </div>
+            <div class="box">
+                <img src="https://www.delhimetrotimes.in/photos/2021/03/vellore.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fa-solid fa-map-pin"></i> Vellore fort </h3>
+                    <p>Vellore Fort is a large 16th-century fort situated in heart of the Vellore city, in the state of Tamil Nadu, India built by Vijayanagara kings.</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="price">100 per person</div>
+                        <a href="#home" class="btn">more details</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://b.zmtcdn.com/data/pictures/7/69917/b603c779d1ea5395dcfa337cfa4d5f6f.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fa-solid fa-map-pin"></i> Zaitoon </h3>
+                    <p>The art of perfect dining and the heart of pure food experience. An engaging and wholesome connection of happiness of eating well.</p>
+                         <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                         </div>
+                         <div class="price">1000 per person</div>
+                         <a href="#home" class="btn">More Details</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://crispyfriedopinions.com/wp-content/uploads/sites/105/2021/01/ChaiGalli_2.jpeg?v=1615302608&w=640" alt="">
+                <div class="content">
+                    <h3><i class="fa-solid fa-map-pin"></i> Chai galli </h3>
+                    <p>An amazing cafe with a wide variety of cusines,this place has the youngster vibe and asthetics along with top notch service and taste.</p>
+                         <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                         </div>
+                         <div class="price">1000 per person</div>
+                         <a href="#home" class="btn">More Details</a>
+                </div>
+            </div>
+
+    </div>
+    </section>
+
+    <section class="friends" id="dates">
+        <h1 class="heading">
+            <span>W</span>
+            <span>I</span>
+            <span>T</span>
+            <span>H</span>
+            <span class="space"></span>
+            <span>D</span>
+            <span>A</span>
+            <span>T</span>
+            <span>E</span>
+        </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="https://www.equitypandit.com/wp-content/uploads/2018/06/pvr-cinemas-1.jpg" alt="">
+            <div class="content">
+                <h3><i class="fa-solid fa-map-pin"></i> PVR </h3>
+                <p>India's largest premium film exhibition company. Enjoy Indian and International cinema with delicious gourmet food, comfortable recliner seats and the classic PVR experience.</p>
+                     <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </div>
+                     <div class="price">500 - 2000 per person</div>
+                     <a href="#home" class="btn">more details</a>
+            </div>
+        </div>
+            <div class="box">
+                <img src="https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,h_600,q_auto,w_auto/v1/filestore/z2dj8ig6f6a8u8yg9sj0kn4dlwfj_Cup%20And%20Saucer%20Waterfalls.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fa-solid fa-map-pin"></i>cup and saucer waterfalls</h3>
+                    <p> The name of this waterfall is attributed to its unique shape that appears as if a cup of water is pouring its contents into a massive saucer.
+
+                        The gorgeous site can be best enjoyed from atop the hill.</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="price">100 per person</div>
+                        <a href="#home" class="btn">more details</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/3c/e2/2c/golden-temple-3.jpg?w=1200&h=-1&s=1" alt="">
+                <div class="content">
+                    <h3><i class="fa-solid fa-map-pin"></i> Golden temple </h3>
+                    <p>The Sripuram Golden Temple is a sight to behold, and it is situated in Tirumalaikodi at Southern Vellore, Tamil Nadu. The golden temple sits inside a spiritual park or ‘Spiritual Oasis’.</p>
+                         <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                         </div>
+                         <div class="price">1000 per person</div>
+                         <a href="#home" class="btn">More Details</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/park-4263184_1280.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fa-solid fa-map-pin"></i> Periyar park </h3>
+                    <p>Periyar Park centrally located in the city of Vellore is a spot frequently visited by both locals and tourists. It is a park with state-of-the-art facilities for joggers, family picnics and other pastimes. This place is best known for its vibrant green matting all over and the different species of birds here.</p>
+                         <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                         </div>
+                         <div class="price">1000 per person</div>
+                         <a href="#home" class="btn">More Details</a>
+                </div>
+            </div>
+
+    </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
